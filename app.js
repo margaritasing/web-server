@@ -2,8 +2,14 @@ const express = require('express');
 const app = express();
 const port = 8080
 
+app.set('view engine', 'hbs');
+
 //middleware
 app.use( express.static('public') )
+
+app.get('/', function(req, res){
+    res.render('home');
+})
 
 
 app.get('/hola-mundo', function(req, res){
